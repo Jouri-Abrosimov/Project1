@@ -41,7 +41,7 @@ int main()
   st1.course = 3;
   printf("%s,\t%d курс,\t%d лет", st1.nm, st1.course, st1.age);
 */
-  student st[20];
+//  student st[20];
 /*
   strcpy(st[1].nm, "Иванов Иван Иванович");
   st[1].age = 18;
