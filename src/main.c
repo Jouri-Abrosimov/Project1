@@ -29,42 +29,37 @@ float yf, zf;
 //----------------------------------------------
 int main()
 {
-  /*
-  student st1;
-  strcpy(st1.nm, "Иванов Иван Иванович");
-  st1.age = 18;
-  st1.course = 2;
-  printf("%s,\t%d курс,\t%d лет", st1.nm, st1.course, st1.age);
-  printf("\n");
-  strcpy(st1.nm, "Петров Петр Петрович");
-  st1.age = 19;
-  st1.course = 3;
-  printf("%s,\t%d курс,\t%d лет", st1.nm, st1.course, st1.age);
-*/
-  student st[20];
-/*
-  strcpy(st[1].nm, "Иванов Иван Иванович");
-  st[1].age = 18;
-  st[1].course = 2;
-  strcpy(st[2].nm, "Петров Петр Петрович");
-  st[2].age = 19;
-  st[2].course = 3;
-  strcpy(st[3].nm, "Сидоров Александр Петрович");
-  st[3].age = 19;
-  st[3].course = 3;
-  for(int i=1;i<=3;i++)
-  printf("%-50s%d курс\t%d лет,\n", st[i].nm, st[i].course, st[i].age);
-*/
-  if(student_counter<20) st[student_counter] = addStudent("Иванов Иван Иванович", 2, 18);
-  if(student_counter<20) st[student_counter] = addStudent("Петров Петр Иванович", 1, 17);
-  if(student_counter<20) st[student_counter] = addStudent("Сидоров Александр Петрович", 4, 22);
-  if(student_counter<20) st[student_counter] = addStudent("Попов Иван Сергеевич", 3, 22);
-  if(student_counter<20) st[student_counter] = addStudent("Васильев Федор Николаевич", 5, 24);
-  if(student_counter<20) st[student_counter] = addStudent("Саблин Виктор Петрович", 1, 18);
-  if(student_counter<20) st[student_counter] = addStudent("Веселкин Алексей Алексеевич", 2, 18);
-  if(student_counter<20) st[student_counter] = addStudent("Трухин Сергей Сергеевич", 5, 23);
-  for(int i=0; i<student_counter; i++)
-  printf("%-30s%d курс\t%d лет\n", st[i].nm, st[i].course, st[i].age);
+  unsigned int a;
+  a = 0xFE340056;
+  printf("Value a is\t\t0x%08X\n", a);
+  unsigned int *p_a;
+  p_a=&a;
+  printf("Value p_a is\t\t0x%08X\n", (unsigned int)p_a);
+  printf("Value a is\t\t0x%08X\n", *p_a);
+  printf("-------------------------------------\n");
+  *p_a = 0xE2222222;
+  printf("Value a is\t\t0x%08X\n", a);
+  printf("-------------------------------------\n");
+  unsigned int b=0xFAFAFAFA;
+  printf("Value b is\t\t0x%08X\n", b);
+  p_a=&b;
+  printf("Value *p_a is\t\t0x%08X\n", *p_a);
+  printf("-------------------------------------\n");
+  unsigned char uch[10] = {0x33, 0x44, 0x55, 0x66, 0x77,
+                             0x88, 0x99, 0xAA, 0xBB, 0xCC};
+  unsigned char *p_uch = &uch[0];
+  printf("Value p_uch is\t\t");
+  for(int i=0; i<10; i++) printf("0x%02X ", p_uch[i]);
+  printf("-------------------------------------\n");
+  //unsigned int *p_p_a;
+  //p_a=&a;
+  //p_p_a=&p_a;
+  //printf("Value p_p_a is\t\t0x%08X\n", (unsigned int)p_p_a);
+  //printf("Value *p_p_a is\t\t0x%08X\n", (unsigned int)*p_p_a);
+  //printf("Value **p_p_a is\t0x%08X\n", (unsigned int)**p_p_a);
+
+ // **p_p_a = 0xBEBEBEBE;
+ //  printf("Value a istt0x%08Xn", a);
 
   return 0; //Return an integer from a function
 }
